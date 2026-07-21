@@ -1,0 +1,26 @@
+det g  = -a(t)**6    (exactly -a^6: sqrt(-g)=a^3, eps-independent)
+Box(phi) = -Derivative(phi(t), (t, 2)) - 3*Derivative(a(t), t)*Derivative(phi(t), t)/a(t)    (eps-independent -> G2, G3 give ZERO at O(eps^2))
+
+Raw O(eps^2) Lagrangian (z-averaged):
+     ⎛                             2⎞     
+   2 ⎜   2  2       2    ⎛d       ⎞ ⎟     
+Mₚₗ ⋅⎜- k ⋅h (t) + a (t)⋅⎜──(h(t))⎟ ⎟⋅a(t)
+     ⎝                   ⎝dt      ⎠ ⎠     
+──────────────────────────────────────────
+                    8                     
+
+Canonical quadratic action  L2 = K hdot^2 - Gr (k^2/a^2) h^2
+K  (kinetic)        = M_pl**2*a(t)**3/8
+Gr (gradient)       = M_pl**2*a(t)**3/8
+c_T^2 = Gr/K        = 1
+h''h and h'h coeffs = 0 , 0   (no IBP even needed)
+mass term at k=0    = 0   (no graviton mass, no background-EOM input required)
+residual terms      = 0
+M*^2 inferred = 8K/a^3 = M_pl**2  -> constant in a  ->  alpha_M = 0
+
+--- Part A: general Horndeski tensor formulas (Bellini-Sawicki) ---
+FPAB:  G2, G3 arbitrary;  G4 = Mpl^2/2;  G5 = 0
+M*^2   = M_pl**2   (constant -> alpha_M = 0)
+alpha_T = 0   (c_T = 1)
+
+delta(z) = -alpha_M/2 = 0  for all z   =>   d_L^GW(z) = d_L^EM(z)   =>   Xi_0 = 1 exactly, n unconstrained.
