@@ -1,0 +1,21 @@
+cff-version: 1.2.0
+message: "If you use this software or data, please cite both the article and this archive."
+type: software
+title: "Structural Entropy Dark Energy: a fixed-parameter, growth-gated holographic dark-energy model without a cosmological constant"
+abstract: "Analysis pipeline (CAMB-in-the-loop MCMC and model comparison) and data for Structural Entropy Dark Energy, a fixed-parameter, growth-gated holographic dark-energy model tested against DESI, Pantheon+, and Planck."
+authors:
+  - family-names: Pandev
+    given-names: Stilian
+    orcid: "https://orcid.org/0009-0005-8153-071X"
+    affiliation: "Independent researcher"
+version: 1.0.0
+date-released: 2026-07-23
+license: MIT
+repository-code: "https://github.com/spsingularity/sede-cosmology"
+keywords:
+  - "dark energy theory"
+  - "dark energy experiments"
+  - "cosmological perturbation theory"
+  - "modified gravity"
+  - "holographic dark energy"
+  - "MCMC"

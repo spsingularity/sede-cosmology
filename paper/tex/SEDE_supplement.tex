@@ -1,0 +1,384 @@
+% Minimal pandoc template for JCAP (jcappub.sty on article class).
+% Engine: xelatex (STIX Two Text) so the prose Unicode + math render.
+\documentclass[11pt,a4paper]{article}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+\else
+  \usepackage{fontspec}
+  \setmainfont{STIX Two Text}
+\fi
+
+\usepackage{jcappub}   % loads amsmath, amssymb, graphicx, natbib[numbers], hyperref
+\usepackage{orcidlink} % ORCID icon next to the author (hyperref already loaded by jcappub)
+
+% --- prose Unicode operators -> math (works under xe/pdf latex) ---
+\usepackage{newunicodechar}
+\newunicodechar{→}{\ensuremath{\rightarrow}}
+\newunicodechar{∂}{\ensuremath{\partial}}
+\newunicodechar{∈}{\ensuremath{\in}}
+\newunicodechar{∎}{\ensuremath{\blacksquare}}
+\newunicodechar{□}{\ensuremath{\Box}}
+\newunicodechar{∝}{\ensuremath{\propto}}
+\newunicodechar{∞}{\ensuremath{\infty}}
+\newunicodechar{∫}{\ensuremath{\int}}
+\newunicodechar{≈}{\ensuremath{\approx}}
+\newunicodechar{≠}{\ensuremath{\neq}}
+\newunicodechar{≡}{\ensuremath{\equiv}}
+\newunicodechar{≤}{\ensuremath{\leq}}
+\newunicodechar{≥}{\ensuremath{\geq}}
+\newunicodechar{≪}{\ensuremath{\ll}}
+\newunicodechar{≫}{\ensuremath{\gg}}
+\newunicodechar{≲}{\ensuremath{\lesssim}}
+\newunicodechar{⊙}{\ensuremath{\odot}}
+\newunicodechar{⊗}{\ensuremath{\otimes}}
+\newunicodechar{⟹}{\ensuremath{\Longrightarrow}}
+\newunicodechar{⟺}{\ensuremath{\Longleftrightarrow}}
+\newunicodechar{⇒}{\ensuremath{\Rightarrow}}
+\newunicodechar{⇔}{\ensuremath{\Leftrightarrow}}
+\newunicodechar{𝓗}{\ensuremath{\mathcal{H}}}
+\newunicodechar{√}{\ensuremath{\surd}}
+\newunicodechar{∼}{\ensuremath{\sim}}
+\newunicodechar{∇}{\ensuremath{\nabla}}
+\newunicodechar{↔}{\ensuremath{\leftrightarrow}}
+\newunicodechar{⟨}{\ensuremath{\langle}}
+\newunicodechar{⟩}{\ensuremath{\rangle}}
+\newunicodechar{−}{\ensuremath{-}}
+\newunicodechar{ℓ}{\ensuremath{\ell}}
+\newunicodechar{ħ}{\ensuremath{\hbar}}
+\newunicodechar{′}{\ensuremath{{}^\prime}}
+\newunicodechar{Ḣ}{\ensuremath{\dot H}}
+\newunicodechar{Ṡ}{\ensuremath{\dot S}}
+\newunicodechar{₊}{\ensuremath{{}_{+}}}
+
+% --- pandoc body requirements ---
+\usepackage{longtable,booktabs,array}
+\usepackage{calc}
+\usepackage{float}
+\makeatletter
+\newsavebox\pandoc@box
+\newcommand*\pandocbounded[1]{%
+  \sbox\pandoc@box{#1}%
+  \Gscale@div\@tempa{\textheight}{\dimexpr\ht\pandoc@box+\dp\pandoc@box\relax}%
+  \Gscale@div\@tempb{\linewidth}{\wd\pandoc@box}%
+  \ifdim\@tempb\p@<\@tempa\p@\let\@tempa\@tempb\fi%
+  \ifdim\@tempa\p@<\p@\scalebox{\@tempa}{\usebox\pandoc@box}%
+  \else\usebox{\pandoc@box}%
+  \fi%
+}
+\makeatother
+\providecommand{\tightlist}{\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\graphicspath{{../../results/paper/}{../../results/}}
+
+% --- front matter (jcappub macros) ---
+\title{Supplementary Material for ``Structural Entropy Dark Energy: a
+fixed-parameter, growth-gated holographic dark-energy model without a
+cosmological constant''}
+\author{Stilian Pandev\,\orcidlink{0009-0005-8153-071X}}
+\affiliation{Independent researcher}
+\emailAdd{stilianpandev@gmail.com}
+\abstract{This supplement collects the supporting motivations and
+numerical probes for the volume-law horizon postulate, demoted from the
+main article to keep its main line focused: three further consistency
+motivations for the volume endpoint, the Majorana--SYK diagonalisation
+that fixes the horizon state, numerical probes of the state and counting
+halves of the postulate, the degrees-of-freedom accounting that locates
+the postulate as a counting (not thermalisation) claim --- with the SYK
+and causal-set comparisons --- and the summary of how far the postulate
+is derivable. None is a derivation; each is a consistency check.
+Cross-references of the form §N refer to sections of the main article;
+§S-N to sections of this supplement.}
+
+
+% absorb small unbreakable-line overruns instead of margin overflow
+\setlength{\emergencystretch}{3em}
+
+\begin{document}
+\maketitle
+\section{Supporting motivations and numerical probes for the volume-law
+postulate}\label{sec-1}
+
+This supplement collects the material demoted from §8 of the main
+article to keep the main line focused: three further consistency
+\emph{motivations} for the volume endpoint (§8.1) and the
+\emph{numerical probes} of the state and counting halves of the
+postulate (§S2). None is a derivation; each is a consistency check that
+makes the postulate less \emph{ad hoc} without selecting it. (The CHR
+near-critical layer, the cross-horizon black-hole reading, and the
+Verlinde dark-matter connection are developed in a separate foundations
+companion paper \citep{Pandev:2026foundations}.)
+
+\subsection{Three further consistency motivations for the volume
+endpoint}\label{sec-1-1}
+
+\emph{(supplementing the geometric ceiling, the CKN scale/form split,
+and the direct area-law disfavouring of §8.1)}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{A driven steady state.} The horizon need not self-thermalise
+  --- its scrambling time (∼ ln \(S / H \approx  280/H\)) far exceeds
+  its age. Instead the structure-growth gate (the rise of
+  \(f_{\mathrm{sat}}\)) \emph{drives} it off the ground state; with a
+  scrambling-limited relaxation rate the volume-law state is
+  \emph{maintained} as a non-equilibrium steady state throughout
+  structure formation (the long scrambling time becomes an asset). The
+  volume law is then a fixed point of SEDE's own dynamics, not an
+  external input.
+\item
+  \emph{A roughening universality class} (\textbf{withdrawn}). This
+  motivation modelled the horizon as a stochastic growing surface,
+  \(\partial h/\partial t = \nu \nabla ^{2}h + (\lambda _{\mathrm{K}}/2)(\nabla h)^{2} + \eta\),
+  and argued the deformation was fixed by the roughening universality
+  class. It is retracted: the count companion paper
+  \citep{Pandev:2026count} shows the classical apparent horizon is
+  constraint-slaved --- \(\theta\)₊ = 0 is elliptic, with no growth
+  equation at any order (its eq. 2.9) --- and has no minimum-cut
+  surface, so it does not roughen and there is no height field or
+  roughening universality class. The ceiling \(\Delta  \leq  1\) and the
+  value \(\Delta  = 1\) rest instead on the count paper's leg-budget
+  capacity theorem and on birth-selection (foundations §5), not on any
+  surface-growth picture.
+\item
+  An independent emergent-gravity proposal \citep{Verlinde:2016toy}. In
+  Verlinde's programme the de Sitter vacuum carries a volume-law
+  contribution to its entanglement entropy,
+  \(S \propto  V_{\mathrm{H}}\), in addition to the horizon area law ---
+  the same super-area scaling SEDE adopts at \(\Delta  = 1\). A second,
+  independently-motivated route arriving at a volume-law entropy makes
+  the postulate less \emph{ad hoc}; it remains a motivation, not a
+  proof, since Verlinde's volume-law derivation is itself heuristic.
+\end{itemize}
+
+\subsection{The state is maximally entangled (Majorana-SYK
+diagonalisation)}\label{sec-1-2}
+
+The \emph{state} half of the postulate (§S2) --- that the horizon dof
+are maximally entangled (thermal), not in a low-entanglement ground
+state --- is settled and not peculiar to SEDE. Exact diagonalisation of
+the Majorana Sachdev--Ye--Kitaev model
+\citep{Sachdev:1992fk, Kitaev:2015}, the canonical chaotic,
+black-hole-dual system saturating the Maldacena--Shenker--Stanford bound
+\(\lambda _{\mathrm{L}} \leq  2\pi T\) \citep{Maldacena:2015waa} (V60),
+confirms: the gap ratio reproduces Wigner--Dyson statistics with the
+correct N-mod-8 symmetry class
+\citep{GarciaGarcia:2016mno, Cotler:2016fpe, Atas:2012np}, eigenstates
+saturate the Page value \citep{Page:1993df, Vidmar:2017pak}, and the
+OTOC scrambles completely --- while an integrable control does none of
+these. But this \textbf{does not fix \(\Delta\)}: a black hole is a
+\emph{maximal} scrambler yet area-law (S = A/4, reproduced by string
+microstate counts), and SYK, being all-to-all (geometry-free), cannot
+even pose the counting question.
+
+\emph{(The SYK scrambling figure --- the gap ratio climbing through the
+N-mod-8 RMT classes, the Page-value saturation of the eigenstate
+entanglement, and the complete OTOC scrambling of the q=4 model against
+the q=2 integrable control --- is omitted from this version; the
+underlying diagnostics are the verification-suite check V60 and
+regenerate from the accompanying code.)}
+
+\subsection{The counting question --- numerical probes (allowed,
+realisable, not selected)}\label{sec-1-3}
+
+The \emph{counting} half (§S2) --- does the horizon dof number grow as
+area \((N \propto  R^{d-2}\), \(\Delta =0\)) or bulk volume
+\((N \propto  R^{d-1}\), \(\Delta =1\))? --- is where SEDE's postulate
+lives. Three numerical probes (V62, V61, V63):
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3333}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3333}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3333}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+question
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+probe
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+result
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Allowed? by the established entropy bounds & volume entropy vs the
+smooth-area bounds & \(S \propto  R^{3}\) overshoots the
+holographic/Bousso/Bekenstein bound A/4 by \(\propto  R\) (∼\(10^{61}\)
+at the cosmic horizon); consistent only as a genuine
+\(d_{\mathrm{H}}=3\) fractal horizon (true area \(\propto  R^{3}\) ⟹
+\(S = A_{\mathrm{fractal}}/4\) \emph{exactly} saturates the bound) \\
+Selected? by quantum gravity & causal-set sprinkle, Minkowski and de
+Sitter & both scalings present; the canonical horizon object --- causal
+\emph{links} --- is area \((R^{d-2}\), the Bekenstein--Hawking
+recovery), in flat space and, because dS is conformally flat,
+identically in de Sitter. \textbf{Volume is not the default.} (measured:
+bulk count \(1.92\approx 2\) ⟹ \(\Delta =1\); link count
+\(0.98\approx 1\) ⟹ \(\Delta =0\), in 2+1D) \\
+Realisable? in a holographic code & Ryu--Takayanagi min-cut, local vs
+nonlocal & local (lattice) connectivity ⟹ area law (exponent 1.0);
+nonlocal (expander) connectivity ⟹ volume law (exponent 1.9).
+\(\Delta =1\) is realisable; its required ingredient is \emph{nonlocal}
+horizon connectivity (the all-to-all structure of SYK). \\
+\end{longtable}
+
+The pattern: volume-counting is allowed (not by evading the bounds but
+by the horizon being genuinely space-filling --- the postulate itself),
+realisable (a nonlocal holographic code produces \(S \propto  R^{d-1}\)
+exactly), but not selected (the frameworks we can compute in default to
+area for the canonical horizon object, and a black hole is area-law). No
+consistency argument available to us \emph{derives} the volume count;
+equally, none \emph{excludes} it. The two deciders are stated in §S2:
+the dS static-patch Hilbert-space dimension (theoretical) and the
+deformation \(\Delta\) (empirical, §5.6/§6).
+
+\section{\texorpdfstring{The postulate is a dof-\emph{counting} claim,
+not a thermalisation
+claim}{The postulate is a dof-counting claim, not a thermalisation claim}}\label{sec-2}
+
+The phrase ``volume-law'' conflates two claims of very different status.
+\textbf{(i) The state:} are the horizon degrees of freedom maximally
+entangled (thermal) or in a low-entanglement ground state? \textbf{(ii)
+The counting:} does the \emph{number} of horizon dof grow as the area,
+\(N \propto  R^{d-2}\), or the spatial volume, \(N \propto  R^{d-1}\)?
+Since S ∼ (state factor) × N, the deformation \(\Delta\) --- through
+\(S \propto  A^{1+\Delta /2}\)∝ \(R^{(d-2)(1+\Delta /2)}\) --- is fixed
+by the counting (area→\(\Delta =0\), volume→\(\Delta =1\) in d=4); the
+state only sets whether the prefactor is maximal. SEDE's postulate is,
+precisely, the counting claim.
+
+\emph{The state half is settled, and is not peculiar to SEDE.} Maximal
+scrambling has a precise meaning in the Sachdev--Ye--Kitaev model
+\citep{Sachdev:1992fk, Kitaev:2015}, the canonical chaotic,
+black-hole-dual system. But maximal scrambling \textbf{does not fix
+\(\Delta\)}: a black hole is a \emph{maximal} scrambler yet area-law (S
+= A/4, \(\Delta =0\), reproduced by string microstate counts).
+Scrambling is therefore shared with the \(\Delta =0\) black hole; and
+SYK, being all-to-all (geometry-free), cannot even pose the counting
+question. (An explicit Majorana-SYK diagonalisation confirming the state
+is maximally entangled --- Wigner--Dyson statistics, Page-value
+saturation, complete OTOC scrambling --- is given in §S1.2; it settles
+the \emph{state}, not the counting.)
+
+\emph{The counting half is where SEDE lives, and area is the default.}
+In causal-set quantum gravity --- the setting where the counting
+question is natural --- both scalings appear, but the \emph{canonical}
+horizon-entropy object, the causal-link count that recovers the
+Bekenstein--Hawking law (Sorkin and collaborators), is the area one
+\((R^{d-2})\), in flat space and identically in de Sitter. So even in
+the framework most hospitable to volume-counting, area-law is the
+default, and SEDE's \(\Delta =1\) is the specific, non-default
+identification of horizon entropy with the bulk count. (The causal-set
+sprinkle measurements, the entropy-bound check, and a Ryu--Takayanagi
+holographic-code realisation --- volume-law requires \emph{nonlocal}
+horizon connectivity --- are in §S1.3; their verdict is that the volume
+count is \textbf{allowed and realisable but not selected}: no
+consistency argument available to us derives it, and none excludes it.)
+
+The sharpened postulate, properly located. The one open item is
+therefore \emph{not} about thermalisation or chaos (settled, and shared
+with area-law black holes) but is purely a dof-counting statement:
+
+\begin{quote}
+the cosmic horizon's entropy counts its bulk (volume-scaling,
+\(N \propto  R^{3}\) ⟺ \(d_{\mathrm{H}} = 3\)) degrees of freedom rather
+than its boundary (area-scaling, links) ones --- a count that exceeds
+the holographic area bound by \(R/\ell _{\mathrm{P}}\) (the seam of
+§8.3).
+\end{quote}
+
+It reduces to two deciders. \emph{Theoretically} it is precisely
+\emph{``is the Hilbert-space dimension of the de Sitter static patch
+\(e^{Area/4}\) or \(e^{Volume}\)?''} --- a frontier problem a complete
+dS holography would settle. \emph{Empirically} it is the deformation
+\(\Delta\): \(\Delta =0\) (area) is already disfavoured by present data
+(§5.6), and DESI DR3 + Euclid will measure \(\Delta\) to ∼0.09 (§6).
+SEDE's postulate is thus not an arbitrary assumption but a
+\emph{consistent, realisable bet on a well-posed open question of
+quantum gravity}, with a decisive test imminent. Tellingly, the one
+horizon we can check today --- the black hole --- is area-law; on the
+evidence here this asymmetry is a genuine conceptual cost. The count
+companion paper \citep{Pandev:2026count} \emph{offers} a resolution ---
+a state-dependent count in which a black hole is area-law because
+\emph{undriven} and only the structure-driven cosmic horizon activates
+the volume law --- which, if its (conjectural) mechanism holds, would
+turn the cost into a predicted feature, with the black-hole side
+derivable and a sharp falsifier (an isolated volume-law black hole).
+
+\section{Is the postulate derivable? Summary of the reduction (full
+treatment in the foundations companion paper)}\label{sec-3}
+
+The volume-law postulate is not monolithic: it splits into a
+\emph{state} (the horizon dof are maximally entangled/thermal), a
+\emph{form} (the entropy scales as the volume), a \emph{scale} (the
+magnitude is \(\rho _{\mathrm{crit}}\), not
+\(\rho _{\mathrm{Planck}}\)), and a \emph{count} (the number of dof
+grows as the bulk, \(N \propto  R^{3}\), not the boundary,
+\(N \propto  R^{2}\)). The deformation \(\Delta\) is fixed by the count
+alone. A systematic study of how derivable each piece is --- five routes
+(de Sitter holography/SYK, entanglement first law in a thermal state,
+Verlinde emergent gravity, gravitational non-additivity, and a
+Bekenstein no-go), the reduction of the count to a \emph{driven
+non-equilibrium steady state}, and three closure routes --- is developed
+in the foundations companion paper \citep{Pandev:2026foundations}; we
+state the conclusions here, as they bear on how \emph{ad hoc} the
+postulate is.
+
+The \emph{state} is first-principles (a maximal scrambler is
+volume-law-entangled; §S1.2, §S2); the \emph{form} reduces to
+thermalisation (volume-law entanglement is the generic behaviour of a
+thermal reference state for regions larger than the thermal length); the
+\emph{scale} is CKN (§8.2). What remains irreducible is purely the
+count, and a Bekenstein no-go makes precise \emph{why}:
+maximum-entropy/energy bounds give the \emph{area} law (§8.3), so the
+volume count cannot be obtained from any energy argument --- it is a
+genuine state/counting statement. The count is, in turn, downstream of
+\emph{connectivity} (locally-connected horizon dof give area-law
+entropy, nonlocal give volume-law) and connectivity of \emph{interaction
+range}: gravity is strongly long-range (1/r with
+\(\alpha  = 1 \leq  d\)), hence non-additive --- the volume class is the
+\emph{natural} one for a self-gravitating horizon, with area-law arising
+only when the holographic bound intervenes for an \emph{isolated,
+equilibrium} horizon (a black hole). The cosmic horizon differs in being
+continuously \emph{driven} by structure formation, which converts the
+black-hole/cosmic asymmetry (§7) into a discriminator (equilibrium →
+area, driven → volume) and reduces the residue to a single, falsifiable
+\textbf{driven-NESS statement}: a strongly-long-range horizon, driven by
+structure formation, settles in the volume-law steady state rather than
+relaxing to the area-law equilibrium. The foundations companion paper
+supplies the two mechanisms this requires --- \emph{selection at the
+horizon's birth} (the N-dependent cooperative coupling
+\(J/J_{\mathrm{c}} = 2\pi Gm^{2}N\) carries the horizon, grown from
+Planckian size, through the ordering bifurcation, with the Barrow tilt
+selecting the volume branch and long-range hysteresis locking it; no
+barrier is ever crossed) and the structure \emph{drive}, whose envelope
+is the gate \(f_{\mathrm{sat}}\), which \emph{populates} the selected
+volume capacity rather than selecting the branch --- so the static
+\emph{counting} postulate is replaced by the weaker, more physical
+statement of a birth-selected branch plus derived occupancy kinetics.
+
+Closure --- deriving even that bistable free energy from first
+principles --- would reduce the dark sector to \(\Omega _{\mathrm{m}}\)
+plus established physics. It takes three precise forms: a de
+Sitter-holography computation of the bulk count (open, and provably not
+shortcut-able through energy bounds); exhibiting the volume branch as a
+real saddle/state (the bistable landscape follows from gravitational
+cooperativity given that branch); or \emph{measuring} \(\Delta\). The
+last is decisive and already in hand: DESI DR3 + Euclid pin \(\Delta\)
+to ∼0.09 (§6), so \(\Delta  = 1\) establishes the volume count as fact
+and \(\Delta  = 0\) refutes it. The postulate is thus a single,
+sharply-posed, falsifiable statement with an imminent test --- not an
+unconstrained assumption.
+
+\section*{Code and data availability}\label{code-and-data-availability}
+\addcontentsline{toc}{section}{Code and data availability}
+
+All code and analysis pipelines are publicly available at
+\url{https://github.com/spsingularity/sede-cosmology}; the numerical
+diagnostics above are regenerated by the accompanying code. A tagged
+release is archived at Zenodo, DOI
+\href{https://doi.org/10.5281/zenodo.21050314}{10.5281/zenodo.21050314}.
+\bibliographystyle{JHEP}
+\bibliography{refs}
+\end{document}

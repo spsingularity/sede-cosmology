@@ -1,0 +1,22 @@
+{
+  "title": "Structural Entropy Dark Energy: a fixed-parameter, growth-gated holographic dark-energy model without a cosmological constant",
+  "description": "Analysis pipeline (CAMB-in-the-loop MCMC and model comparison) and data for Structural Entropy Dark Energy, a fixed-parameter, growth-gated holographic dark-energy model tested against DESI, Pantheon+, and Planck.",
+  "creators": [
+    {
+      "name": "Pandev, Stilian",
+      "orcid": "0009-0005-8153-071X",
+      "affiliation": "Independent researcher"
+    }
+  ],
+  "upload_type": "software",
+  "license": "mit",
+  "access_right": "open",
+  "keywords": [
+    "dark energy theory",
+    "dark energy experiments",
+    "cosmological perturbation theory",
+    "modified gravity",
+    "holographic dark energy",
+    "MCMC"
+  ]
+}

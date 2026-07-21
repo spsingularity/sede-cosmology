@@ -1,0 +1,7 @@
+{
+  "note": "Marginalised emcee comparison (run_barrow_mcmc.py --steps 600 --burn 200), canonical Barrow lambda=0.5 vs LCDM, compressed-CMB joint.",
+  "barrow": {"chi2_min": 1436.21, "chi2_mean": 1441.06, "p_D": 4.8, "DIC": 1445.90,
+             "Om": [0.2987, 0.0036], "H0": [68.6722, 0.36], "s8": [0.7645, 0.03]},
+  "lcdm":   {"chi2_min": 1440.86, "chi2_mean": 1445.73, "p_D": 4.9, "DIC": 1450.60},
+  "delta_DIC": -4.69, "delta_chi2_min_chains": -4.66, "delta_chi2_min_optimizer": -4.68
+}
