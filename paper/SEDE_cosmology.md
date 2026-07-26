@@ -1527,6 +1527,34 @@ the postulate, not a finished proof. (The alternative once entertained — a sel
 ratchet with observable CHR signatures — is *excluded*: the count companion [@Pandev:2026count] shows
 the apparent horizon is constraint-slaved and does not roughen, §6.)
 
+**Background robustness (model-independent H(z)).** Against the standard 31-point
+cosmic-chronometer compilation — the cleanest model-independent expansion-history data, with no
+sound-horizon calibration — the model fits with Δχ² = +0.04 relative to flat ΛCDM *at equal
+parameter count* (Ω_m = 0.325, H₀ = 67.9 vs 0.320, 68.1 km s⁻¹ Mpc⁻¹; γ fixed at its
+halo-statistics value throughout; script `run_deficit_data.py`). The background is
+indistinguishable from ΛCDM on H(z) alone: the gate's imprint on the z ≥ 0 expansion shape is
+absorbed by an (Ω_m, H₀) shift to the ~0.2% level (an oΛCDM fit to the model's own curve
+returns Ω_k,eff = 0.000) — which is precisely why the model's discriminating power resides in
+the growth and tensor sectors (§6) rather than in the background.
+
+**The deep-future second law selects a saturation endpoint.** Extending the background beyond
+the fitted range exposes a structural constraint invisible to data (script
+`run_gate_selection.py`). On the accelerating attractor the gate's remaining
+fill decays at the linear-growth rate ∝ e^{−2N} (N = ln a), slower than matter's e^{−3N}, so
+any gate still strictly filling at the attractor forces H to undershoot H_∞ and the horizon
+entropy to overshoot its ceiling transiently — a sub-percent (≈0.25%), strictly future
+(a ≳ 6.5) violation of the generalized second law. No theorem is contradicted: the null energy
+condition fails there transiently, which is exactly where GSL proofs do not apply, and the
+entire observable past is monotone. But for a model whose fundamental object *is* horizon
+entropy, requiring the second law globally is natural, and it bounds the saturation endpoint:
+the gate must complete its filling at x* ≲ 1.8, where x = σ₈²(z)/σ₈²(0). Every member of the
+capped family x* ∈ [1, 1.8] is identical to the uncapped exponential gate over z ≥ 0 to machine
+precision — the bound carries no observational cost — and its maximally conservative member
+(x* = 1) places completion at the present epoch, an independent, sharper restatement of the
+coincidence problem. (The Bousso-bound hypothesis H5, stated in full-saturation units, is
+automatically satisfied by any CDF gate and is not this bound; the second-law cap is a new,
+strictly stronger statement.)
+
 **Scope and tensions.** H₀ is out of SEDE's scope (it is r_d-pinned; the model does not address the
 distance-ladder tension and we do not claim it does). *S8: the completed FPAB-SEDE theory computes
 σ8(0) = 0.811, which **raises** growth relative to matched ΛCDM (0.800) — SEDE therefore sits at the

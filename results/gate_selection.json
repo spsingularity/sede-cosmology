@@ -1,0 +1,166 @@
+{
+  "A_smooth_families": {
+    "exp_g0.5": {
+      "monotone_H": false,
+      "undershoot_depth": -0.08526337333318845,
+      "x_inf": 1.8529569389039835,
+      "f_inf": 1.535200701797386,
+      "E_inf": 1.0514743126680477
+    },
+    "exp_g1.5": {
+      "monotone_H": false,
+      "undershoot_depth": -0.0027973019920619624,
+      "x_inf": 1.9845871871299061,
+      "f_inf": 1.2216312644807807,
+      "E_inf": 0.8367074693555316
+    },
+    "exp_g3": {
+      "monotone_H": false,
+      "undershoot_depth": -1.1938359437690949e-06,
+      "x_inf": 2.0949895912264607,
+      "f_inf": 1.0504339096998199,
+      "E_inf": 0.7194526890925037
+    },
+    "linear": {
+      "monotone_H": false,
+      "undershoot_depth": -0.18684049768958122,
+      "x_inf": 1.7797296051902889,
+      "f_inf": 1.7797296051902889,
+      "E_inf": 1.2189546038908807
+    },
+    "quadratic": {
+      "monotone_H": false,
+      "undershoot_depth": -0.44863260868079513,
+      "x_inf": 1.607048004368115,
+      "f_inf": 2.582603288343541,
+      "E_inf": 1.7688508182193745
+    },
+    "sqrt": {
+      "monotone_H": false,
+      "undershoot_depth": -0.0463769622661403,
+      "x_inf": 1.9197448268901396,
+      "f_inf": 1.3855485653307644,
+      "E_inf": 0.948976067880694
+    },
+    "tanh": {
+      "monotone_H": false,
+      "undershoot_depth": -0.0028006549264730785,
+      "x_inf": 1.9574639972356678,
+      "f_inf": 1.2616901506893465,
+      "E_inf": 0.8641442011086404
+    }
+  },
+  "B_capped_family": {
+    "1.000": {
+      "monotone_H": true,
+      "undershoot_depth": 0.0,
+      "x_inf": 2.150422020546213,
+      "f_inf": 1.0,
+      "E_inf": 0.6849100000000001,
+      "x_star": 1.0,
+      "past_identical_to_SEDE": 2.0518189092211259e-07,
+      "deficit_today": 0.0
+    },
+    "1.100": {
+      "monotone_H": true,
+      "undershoot_depth": 0.0,
+      "x_inf": 2.098347942398686,
+      "f_inf": 1.040007025544477,
+      "E_inf": 0.7123112118656679,
+      "x_star": 1.1,
+      "past_identical_to_SEDE": 0.0,
+      "deficit_today": 0.03846803392845555
+    },
+    "1.200": {
+      "monotone_H": true,
+      "undershoot_depth": 0.0,
+      "x_inf": 2.061196432474597,
+      "f_inf": 1.0744413915436497,
+      "E_inf": 0.7358956534821612,
+      "x_star": 1.2,
+      "past_identical_to_SEDE": 0.0,
+      "deficit_today": 0.06928380843249138
+    },
+    "1.300": {
+      "monotone_H": true,
+      "undershoot_depth": 0.0,
+      "x_inf": 2.0347989863581075,
+      "f_inf": 1.1040793250222776,
+      "E_inf": 0.7561949705010083,
+      "x_star": 1.3,
+      "past_identical_to_SEDE": 0.0,
+      "deficit_today": 0.09426797754787908
+    },
+    "1.400": {
+      "monotone_H": true,
+      "undershoot_depth": 0.0,
+      "x_inf": 2.016248631555114,
+      "f_inf": 1.1295889307720874,
+      "E_inf": 0.7736667545751106,
+      "x_star": 1.4,
+      "past_identical_to_SEDE": 0.0,
+      "deficit_today": 0.11472220313234827
+    },
+    "1.500": {
+      "monotone_H": true,
+      "undershoot_depth": 0.0,
+      "x_inf": 2.003465075690709,
+      "f_inf": 1.1515452519164076,
+      "E_inf": 0.7887048584900669,
+      "x_star": 1.5,
+      "past_identical_to_SEDE": 0.0,
+      "deficit_today": 0.13160164714691425
+    },
+    "1.600": {
+      "monotone_H": true,
+      "undershoot_depth": 0.0,
+      "x_inf": 1.9949312167447641,
+      "f_inf": 1.170443232658274,
+      "E_inf": 0.8016482744799787,
+      "x_star": 1.6,
+      "past_identical_to_SEDE": 0.0,
+      "deficit_today": 0.14562281014788625
+    },
+    "1.700": {
+      "monotone_H": true,
+      "undershoot_depth": 0.0,
+      "x_inf": 1.9895228063774755,
+      "f_inf": 1.1867088754211257,
+      "E_inf": 0.8127887758646833,
+      "x_star": 1.7,
+      "past_identical_to_SEDE": 0.0,
+      "deficit_today": 0.15733334374436914
+    },
+    "1.800": {
+      "monotone_H": true,
+      "undershoot_depth": 0.0,
+      "x_inf": 1.98639734654807,
+      "f_inf": 1.2007088438887925,
+      "E_inf": 0.822377494267873,
+      "x_star": 1.8,
+      "past_identical_to_SEDE": 0.0,
+      "deficit_today": 0.1671586287636121
+    },
+    "1.900": {
+      "monotone_H": false,
+      "undershoot_depth": 0.0,
+      "x_inf": 1.9849178760327162,
+      "f_inf": 1.2127587284186125,
+      "E_inf": 0.830630580681192,
+      "x_star": 1.9,
+      "past_identical_to_SEDE": 0.0,
+      "deficit_today": 0.17543368143475757
+    },
+    "1.985": {
+      "monotone_H": false,
+      "undershoot_depth": -0.0027973019920619624,
+      "x_inf": 1.984587187129908,
+      "f_inf": 1.2216312644807807,
+      "E_inf": 0.8367074693555316,
+      "x_star": 1.9845871871299061,
+      "past_identical_to_SEDE": 0.0,
+      "deficit_today": 0.181422390638454
+    }
+  },
+  "x_star_crit_bracket": 1.8
+}
