@@ -9,9 +9,11 @@ the verified values from the accompanying code, checked by the verification suit
 
 We present Structural Entropy Dark Energy (SEDE), in which the cosmological constant is replaced by the
 thermal energy of the cosmic apparent horizon, ρ_DE = T_AH s_grav f_sat(z), switched on by the growth of
-cosmic structure — a dark sector with **no fitted parameter**: the amplitude is fixed by flatness, the
-gate shape by a halo-binding prescription (γ ≈ 1.5), and the one discrete postulate is a volume-law
-(Barrow Δ = 1) horizon entropy, the quantity our forecasts target. To be explicit about scope, SEDE
+cosmic structure — a dark sector with **zero fitted parameters and three stated prescriptions**: the
+amplitude is fixed by flatness, the gate shape by a halo-binding prescription (γ ≈ 1.5), the H-scaling by
+the volume-law postulate (λ = 1 − Δ/2 = 1/2), and the sound speed by the closure c_s² = 1. Nothing is
+tuned to the data; each prescription is a stated choice, declared before the fit, and the one discrete
+postulate is a volume-law (Barrow Δ = 1) horizon entropy, the quantity our forecasts target. To be explicit about scope, SEDE
 modifies *only* the dark-energy density in an otherwise standard-GR Friedmann background (holographic
 DE, not modified gravity), with ρ_DE = T_AH s_grav f_sat imposed as an exact ansatz whose equation of
 state is a *derived* consequence of energy conservation, not an equilibrium ρ + p = Ts relation. In a marginalised, CAMB-in-the-loop
@@ -119,7 +121,13 @@ construction is *holographic* dark energy — not entropic or modified gravity �
 sound horizon r_drag, and hence the modified-gravity Barrow/BBN bounds untouched. (In Barrow
 *modified-gravity* cosmology, by contrast, the same first law is applied to derive the background itself,
 giving H^{2−Δ} ∝ ρ [@Saridakis:2020zol]; that is deliberately *not* the construction here — the Barrow
-deformation enters ρ_DE alone.) Correspondingly,
+deformation enters ρ_DE alone.) We stress that this is a *substantive* restriction rather than a stylistic
+one, and that the alternative is disfavoured rather than merely different: feeding the same deformation
+into the field equations makes the scalar sector modify gravity directly, and a ghost-free,
+gradient-stable completion with c_T = 1 then forces the effective coupling upward — an enhancement of
+structure growth larger than the present data permit. The asymmetry between deforming ρ_DE and deforming
+the geometry is therefore load-bearing: it is the branch of the construction that survives the growth
+constraints, not simply the branch we chose to develop. Correspondingly,
 ρ_DE = T_AH s_grav f_sat is imposed as an *exact effective relation* that fixes the dark-energy
 density's amplitude and its H-scaling; the equation of state is then a derived, kinematic consequence
 of energy conservation on that standard background (it crosses w = −1 by *sourcing*), not the
@@ -137,8 +145,13 @@ is an approximation, made deliberately: the dynamical (1 − ε/2) correction is
 exactly where f_sat → 0 and dark energy is negligible, and including it in full on the volume-law fluid
 is in fact *disfavoured* — it yields an unstable, phantom-everywhere background with no w = −1 crossing
 (§6). So T_AH = H/2π is the physically-appropriate choice for this sector and
-it is what enters the calibrated E(z). We are explicit about the epistemic status of this step: the
-Gibbons–Hawking form is a *convention selected* in part by the failure of the dynamical alternative, so
+it is what enters the calibrated E(z). We emphasise that this selection is made on the physical argument
+alone and does not depend on the outcome: the (1 − ε/2) correction is parametrically negligible precisely
+where this fluid carries any weight, so the ε → 0 limit would be the right leading choice for a
+slowly-evolving horizon fluid *even had the dynamical variant produced an acceptable background*. That
+the dynamical variant additionally fails is a consistency check on the choice, not its justification.
+We are nonetheless explicit about the epistemic status of this step: the
+Gibbons–Hawking form is a convention, and one whose adoption is corroborated by the failure of the dynamical alternative, so
 quantities downstream of it — notably the w = −1 crossing redshift (§6) — are convention-conditional
 outputs of the adopted temperature, not convention-free predictions. We *identify* the dark-energy density with the conjugate
 horizon-fluid energy density,
@@ -283,7 +296,7 @@ dark-energy fluid.
 
 ---
 
-## 3. Fixed inputs: why the dark sector adds no fitted parameter
+## 3. Fixed inputs: zero fitted parameters, three stated prescriptions
 
 In flat ΛCDM the dark-energy amplitude Ω_Λ0 = 1 − Ω_m − Ω_r is itself fixed by the flatness closure,
 not an independent fit; SEDE keeps exactly this — no independent dark-energy amplitude beyond flatness

@@ -84,7 +84,9 @@
 \graphicspath{{../../results/paper/}{../../results/}}
 
 \journal{Physics of the Dark Universe}
-\setlength{\emergencystretch}{3em}
+\setlength{\emergencystretch}{6em}
+% long DOIs in 12pt single column would otherwise overrun; let TeX stretch instead
+\sloppy
 
 \begin{document}
 \begin{frontmatter}
@@ -101,14 +103,18 @@ We present Structural Entropy Dark Energy (SEDE), in which the
 cosmological constant is replaced by the thermal energy of the cosmic
 apparent horizon, \(\rho _\mathrm{DE} = T_\mathrm{AH}\)
 \(s_{\mathrm{grav}}\) \(f_{\mathrm{sat}}(z)\), switched on by the growth
-of cosmic structure --- a dark sector with \textbf{no fitted parameter}:
-the amplitude is fixed by flatness, the gate shape by a halo-binding
-prescription \((\gamma  \approx  1.5)\), and the one discrete postulate
-is a volume-law (Barrow \(\Delta  = 1\)) horizon entropy, the quantity
-our forecasts target. To be explicit about scope, SEDE modifies
-\emph{only} the dark-energy density in an otherwise standard-GR
-Friedmann background (holographic DE, not modified gravity), with
-\(\rho _\mathrm{DE} = T_\mathrm{AH}\) \(s_{\mathrm{grav}}\)
+of cosmic structure --- a dark sector with \textbf{zero fitted
+parameters and three stated prescriptions}: the amplitude is fixed by
+flatness, the gate shape by a halo-binding prescription
+\((\gamma  \approx  1.5)\), the H-scaling by the volume-law postulate
+\((\lambda  = 1 - \Delta /2 = 1/2)\), and the sound speed by the closure
+\(c_{\mathrm{s}}^{2} = 1\). Nothing is tuned to the data; each
+prescription is a stated choice, declared before the fit, and the one
+discrete postulate is a volume-law (Barrow \(\Delta  = 1\)) horizon
+entropy, the quantity our forecasts target. To be explicit about scope,
+SEDE modifies \emph{only} the dark-energy density in an otherwise
+standard-GR Friedmann background (holographic DE, not modified gravity),
+with \(\rho _\mathrm{DE} = T_\mathrm{AH}\) \(s_{\mathrm{grav}}\)
 \(f_{\mathrm{sat}}\) imposed as an exact ansatz whose equation of state
 is a \emph{derived} consequence of energy conservation, not an
 equilibrium \(\rho  + p = Ts\) relation. In a marginalised,
@@ -280,22 +286,32 @@ bounds untouched. (In Barrow \emph{modified-gravity} cosmology, by
 contrast, the same first law is applied to derive the background itself,
 giving \(H^{2-\Delta } \propto  \rho\) \citep{Saridakis:2020zol}; that
 is deliberately \emph{not} the construction here --- the Barrow
-deformation enters \(\rho _\mathrm{DE}\) alone.) Correspondingly,
-\(\rho _\mathrm{DE} = T_\mathrm{AH}\) \(s_{\mathrm{grav}}\)
-\(f_{\mathrm{sat}}\) is imposed as an \emph{exact effective relation}
-that fixes the dark-energy density's amplitude and its H-scaling; the
-equation of state is then a derived, kinematic consequence of energy
-conservation on that standard background (it crosses \(w = -1\) by
-\emph{sourcing}), not the equilibrium enthalpy relation
-\(\rho  + p = Ts\), which does not hold for this open, structure-fed
-sector. The whole construction is governed by one bookkeeping rule ---
-that energy is conserved when this fluid's redshift dependence is gated
-by structure growth. We first state the model (the conjugate
-horizon-fluid ansatz, the structure gate, the Friedmann equation, and
-how \(\Lambda\) is replaced), and then make energy conservation the
-backbone: it is what fixes the role of structure's gravitational binding
-energy as \emph{entropic}, not energetic, and what shows the \(w = -1\)
-crossing to be sourcing rather than a phantom field.
+deformation enters \(\rho _\mathrm{DE}\) alone.) We stress that this is
+a \emph{substantive} restriction rather than a stylistic one, and that
+the alternative is disfavoured rather than merely different: feeding the
+same deformation into the field equations makes the scalar sector modify
+gravity directly, and a ghost-free, gradient-stable completion with
+\(c_{\mathrm{T}} = 1\) then forces the effective coupling upward --- an
+enhancement of structure growth larger than the present data permit. The
+asymmetry between deforming \(\rho _\mathrm{DE}\) and deforming the
+geometry is therefore load-bearing: it is the branch of the construction
+that survives the growth constraints, not simply the branch we chose to
+develop. Correspondingly, \(\rho _\mathrm{DE} = T_\mathrm{AH}\)
+\(s_{\mathrm{grav}}\) \(f_{\mathrm{sat}}\) is imposed as an \emph{exact
+effective relation} that fixes the dark-energy density's amplitude and
+its H-scaling; the equation of state is then a derived, kinematic
+consequence of energy conservation on that standard background (it
+crosses \(w = -1\) by \emph{sourcing}), not the equilibrium enthalpy
+relation \(\rho  + p = Ts\), which does not hold for this open,
+structure-fed sector. The whole construction is governed by one
+bookkeeping rule --- that energy is conserved when this fluid's redshift
+dependence is gated by structure growth. We first state the model (the
+conjugate horizon-fluid ansatz, the structure gate, the Friedmann
+equation, and how \(\Lambda\) is replaced), and then make energy
+conservation the backbone: it is what fixes the role of structure's
+gravitational binding energy as \emph{entropic}, not energetic, and what
+shows the \(w = -1\) crossing to be sourcing rather than a phantom
+field.
 
 The conjugate horizon-fluid ansatz. At the cosmological apparent horizon
 \(R_\mathrm{AH} = 1/H\) (flat FRW), the dynamical Cai--Kim temperature
@@ -311,14 +327,21 @@ and including it in full on the volume-law fluid is in fact
 \emph{disfavoured} --- it yields an unstable, phantom-everywhere
 background with no \(w = -1\) crossing (§\ref{sec-6}). So
 \(T_\mathrm{AH} = H/2\pi\) is the physically-appropriate choice for this
-sector and it is what enters the calibrated E(z). We are explicit about
-the epistemic status of this step: the Gibbons--Hawking form is a
-\emph{convention selected} in part by the failure of the dynamical
-alternative, so quantities downstream of it --- notably the \(w = -1\)
-crossing redshift (§\ref{sec-6}) --- are convention-conditional outputs
-of the adopted temperature, not convention-free predictions. We
-\emph{identify} the dark-energy density with the conjugate horizon-fluid
-energy density,
+sector and it is what enters the calibrated E(z). We emphasise that this
+selection is made on the physical argument alone and does not depend on
+the outcome: the \((1 - \epsilon /2)\) correction is parametrically
+negligible precisely where this fluid carries any weight, so the
+\(\epsilon\) → 0 limit would be the right leading choice for a
+slowly-evolving horizon fluid \emph{even had the dynamical variant
+produced an acceptable background}. That the dynamical variant
+additionally fails is a consistency check on the choice, not its
+justification. We are nonetheless explicit about the epistemic status of
+this step: the Gibbons--Hawking form is a convention, and one whose
+adoption is corroborated by the failure of the dynamical alternative, so
+quantities downstream of it --- notably the \(w = -1\) crossing redshift
+(§\ref{sec-6}) --- are convention-conditional outputs of the adopted
+temperature, not convention-free predictions. We \emph{identify} the
+dark-energy density with the conjugate horizon-fluid energy density,
 \begin{equation}\rho_{\rm DE} = T_{AH}\, s_{\rm grav}\, f_{\rm sat}(z),\end{equation} where
 \(s_{\mathrm{grav}}\) is the gravitational entropy \emph{density} and
 \(f_{\mathrm{sat}}\) is an effective horizon-entropy activation gate,
@@ -566,8 +589,8 @@ only on the late-time dark-energy fluid.}\label{fig:1}
 
 \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
-\section{Fixed inputs: why the dark sector adds no fitted
-parameter}\label{sec-3}
+\section{Fixed inputs: zero fitted parameters, three stated
+prescriptions}\label{sec-3}
 
 In flat \(\Lambda \mathrm{CDM}\) the dark-energy amplitude
 \(\Omega _\Lambda 0 = 1 - \Omega _{\mathrm{m}} - \Omega _{\mathrm{r}}\)
