@@ -1,6 +1,8 @@
-% Minimal pandoc template for JCAP (jcappub.sty on article class).
+% Pandoc template for Physics of the Dark Universe (Elsevier, elsarticle.cls).
+% Retargeted from template_cosmology.tex: JCAP requires an arXiv identifier
+% (confirmed by its editorial office, 2026-07-29), which is unavailable to this program.
 % Engine: xelatex (STIX Two Text) so the prose Unicode + math render.
-\documentclass[11pt,a4paper]{article}
+\documentclass[preprint,12pt]{elsarticle}
 \usepackage{iftex}
 \ifPDFTeX
   \usepackage[T1]{fontenc}
@@ -10,8 +12,18 @@
   \setmainfont{STIX Two Text}
 \fi
 
-\usepackage{jcappub}   % loads amsmath, amssymb, graphicx, natbib[numbers], hyperref
-\usepackage{orcidlink} % ORCID icon next to the author (hyperref already loaded by jcappub)
+\usepackage{amsmath,amssymb,graphicx}
+\usepackage[hidelinks]{hyperref}
+\usepackage{orcidlink}
+
+\makeatletter
+\let\pandocsurd\surd \renewcommand{\surd}{\ensuremath{\pandocsurd}}
+\makeatother
+
+\hyphenation{zenodo Zenodo}
+
+\providecommand{\eprint}[1]{#1}
+\AtBeginDocument{\renewcommand{\eprint}[1]{\href{https://arxiv.org/abs/#1}{#1}}}
 
 % --- prose Unicode operators -> math (works under xe/pdf latex) ---
 \usepackage{newunicodechar}
@@ -71,13 +83,21 @@
 \providecommand{\tightlist}{\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
 \graphicspath{{../../results/paper/}{../../results/}}
 
-% --- front matter (jcappub macros) ---
+\journal{Physics of the Dark Universe}
+\setlength{\emergencystretch}{3em}
+
+\begin{document}
+\begin{frontmatter}
+
 \title{Structural Entropy Dark Energy: a fixed-parameter, growth-gated
 holographic dark-energy model without a cosmological constant}
-\author{Stilian Pandev\,\orcidlink{0009-0005-8153-071X}}
-\affiliation{Independent researcher}
-\emailAdd{stilianpandev@gmail.com}
-\abstract{We present Structural Entropy Dark Energy (SEDE), in which the
+
+\author[ind]{Stilian Pandev\,\orcidlink{0009-0005-8153-071X}}
+\ead{stilianpandev@gmail.com}
+\address[ind]{Independent researcher}
+
+\begin{abstract}
+We present Structural Entropy Dark Energy (SEDE), in which the
 cosmological constant is replaced by the thermal energy of the cosmic
 apparent horizon, \(\rho _\mathrm{DE} = T_\mathrm{AH}\)
 \(s_{\mathrm{grav}}\) \(f_{\mathrm{sat}}(z)\), switched on by the growth
@@ -114,15 +134,16 @@ confirms the DR2 central values, SEDE is disfavoured alongside
 \(\Lambda \mathrm{CDM}\), not rescued by proximity.} The decisive
 falsifier is the discrete entropy index, \(\Delta  = 1\) versus 0,
 measurable by DESI DR3 + Euclid at a Fisher-forecast
-\(\sigma (\Delta ) \approx  0.09\).}
-\keywords{dark energy theory; dark energy experiments; cosmological
-perturbation theory; modified gravity}
+\(\sigma (\Delta ) \approx  0.09\).
+\end{abstract}
 
-% absorb small unbreakable-line overruns instead of margin overflow
-\setlength{\emergencystretch}{3em}
+\begin{keyword}
+dark energy theory \sep dark energy experiments \sep cosmological perturbation
+theory \sep modified gravity
+\end{keyword}
 
-\begin{document}
-\maketitle
+\end{frontmatter}
+
 \section{Introduction}\label{sec-1}
 
 The standard cosmological model, \(\Lambda \mathrm{CDM}\), fits an
@@ -658,7 +679,7 @@ EOS parameter; this is the w(z) used throughout (§\ref{sec-5}, Fig. 4).
 the reported pair \((w_{0}\), \(w_{\mathrm{a}}) \approx  (-0.98\),
 −0.11) is the CPL projection of this same w(z) over 0 \textless{} z
 \textless{} 1 --- the range used by the locked
-\texttt{predictions.json}. The CPL \(w_{\mathrm{a}}\) steepens if fit
+\texttt{predictions.\allowbreak json}. The CPL \(w_{\mathrm{a}}\) steepens if fit
 over a wider range, \(e.g. -0.17\) over 0 \textless{} z \textless{} 2,
 so the fit window is quoted with the pair.)} Three \(w_{0}\) values
 appear in this paper for \emph{different} objects; to avoid confusion:
@@ -732,7 +753,7 @@ coarse-grained, not local, \(\rho _\mathrm{DE}\) is homogeneous by
 construction, and the dark energy has the standard metric-driven
 response with \(c_{\mathrm{s}}^{2} = 1\). That closure is a
 \emph{modelling} choice, not a theorem, and it is the sub-horizon
-(\texttt{c\_s²=1}) limit of the completed theory rather than the theory
+(\texttt{c\_\allowbreak s²=1}) limit of the completed theory rather than the theory
 itself.
 
 \textbf{The completed perturbation sector (FPAB-SEDE).} The background
@@ -760,7 +781,7 @@ quadratic tensor action for arbitrary functional forms, so the entire
 tensor sector is that of GR and the GW and EM luminosity distances
 coincide (\(\Xi_0 = 1\) exactly) --- see the tensor-sector and
 standard-siren predictions in §\ref{sec-6} (script
-\texttt{fpab\_tensor\_sector.py}). Its perturbations are solved
+\texttt{fpab\_\allowbreak tensor\_\allowbreak sector.\allowbreak py}). Its perturbations are solved
 \emph{dynamically} (Mochi-CLASS, not a PPF or an imposed sound speed):
 ghost- and gradient-stable, with
 \begin{equation}c_s^2 \in [0.018,\,0.18],\qquad \gamma_{\rm slip}=1,\qquad \mu_\infty(0)=1.05,\end{equation}
@@ -881,7 +902,7 @@ against the full non-lite plik with all 15 foregrounds sampled
 \emph{primary} multifrequency likelihood is not run (ACT \emph{lensing},
 the DE-sensitive channel, is, evaluated at the primary best-fit;
 §\ref{sec-5-1}). It is formally deferred under a pre-registered trigger
-(pre-registration §\ref{sec-E}): the \texttt{act\_dr6\_mflike}
+(pre-registration §\ref{sec-E}): the \texttt{act\_\allowbreak dr6\_\allowbreak mflike}
 likelihood and its multi-GB data products are not installed, and with
 three concordant CMB datasets --- \(plik_{\mathrm{lite}}\), full
 non-lite plik, and ACT DR6 lensing --- all at
@@ -1379,7 +1400,7 @@ preference is neither the generic evolving-DE signal nor an artifact of
 holding the shape fixed. The full model set \((\Lambda \mathrm{CDM}\),
 SEDE, \(w_{0}w_{\mathrm{a}}\mathrm{CDM}\), and free-shape SEDE) and a
 Bayesian-evidence cross-check are carried out by
-\texttt{run\_model\_comparison.py} in the reproduction repository.
+\texttt{run\_\allowbreak model\_\allowbreak comparison.\allowbreak py} in the reproduction repository.
 
 \subsection{\texorpdfstring{The deformation \(\Delta\) from current data
 --- a conditional
@@ -1599,11 +1620,11 @@ trajectory-level (one calibrated cubic-KGB member reproducing the
 background, not a theorem that every solution is healthy; §\ref{sec-7})
 and awaits a full perturbative refit (§\ref{sec-4-4}) --- they are
 forecasts, not yet marginalised measurements. The full machine-readable
-prediction set is committed as \texttt{predictions.json} in the
+prediction set is committed as \texttt{predictions.\allowbreak json} in the
 reproduction repository, cryptographically locked by
-\texttt{sha256(predictions.json)} =
+\texttt{sha256(predictions.\allowbreak json)} =
 \texttt{4e2ca4b5\allowbreak{}721ef60a\allowbreak{}68a7e78e\allowbreak{}033f0a1d\allowbreak{}5f565f82\allowbreak{}7656ee4d\allowbreak{}49901d5c\allowbreak{}58d059ce};
-it is regenerated byte-for-byte by \texttt{gen\_predictions.py}, so the
+it is regenerated byte-for-byte by \texttt{gen\_\allowbreak predictions.\allowbreak py}, so the
 registered values cannot be altered after this digest is published.
 
 \fussy
@@ -1952,7 +1973,7 @@ and survives any refinement of \(f_{\rm sat}\) or \(\gamma\). Therefore
 unconstrained.} The result agrees with the general Horndeski tensor
 coefficients \citep{Bellini:2014fua} evaluated at
 \(G_4 = M_{\rm P}^2/2\), \(G_5 = 0\); both tiers are verified
-symbolically in \texttt{fpab\_tensor\_sector.py} (regenerated on build).
+symbolically in \texttt{fpab\_\allowbreak tensor\_\allowbreak sector.\allowbreak py} (regenerated on build).
 
 \textbf{Two discriminants.} (i) \emph{Versus running-Planck-mass dark
 energy.} \(f(R)\), \(G_4(\phi)\) Horndeski and nonlocal RT gravity
@@ -1994,7 +2015,7 @@ and a long-horizon confirmation, not a near-term falsification. The
 whole argument is captured on the \((\Xi_0, w_0)\) plane ---
 \(\Lambda\)CDM at \((-1,1)\), running-\(M_*\) rivals off the
 \(\Xi_0 = 1\) line, SEDE alone at \((-0.98,1)\) --- reproduced by
-\texttt{fig\_xi0\_w0.py} in the repository.
+\texttt{fig\_\allowbreak xi0\_\allowbreak w0.\allowbreak py} in the repository.
 
 \textbf{Pre-recombination corollary.} The same gate that suppresses the
 late-time source drives \(f_{\rm sat} \to \gamma D^2/(1 - e^{-\gamma})\)
@@ -2002,7 +2023,7 @@ as \(D \to 0\); at last scattering the pipeline growth gives
 \(f_{\rm sat}(z = 1089.9) = 3.4\times10^{-6}\) and
 \(\rho_{\rm DE}/\rho_{\rm tot} = 1.0\times10^{-10}\) (canonical
 \(E_{\rm SEDE,\,volume}\), \(\Omega_m = 0.30\), \(\gamma = 1.496\);
-\texttt{tensor\_sector/prerecomb\_earlyde.py}, consistent with the
+\texttt{tensor\_\allowbreak sector/\allowbreak prerecomb\_\allowbreak earlyde.\allowbreak py}, consistent with the
 \(\Omega_{\rm DE}(z=3) = 0.029\) of Fig. 5). SEDE therefore carries no
 early dark energy and the sound horizon \(r_s\) is exactly standard ---
 the model bets entirely on the late-time side of the Hubble tension; a
@@ -2845,7 +2866,7 @@ calibration --- the model fits with \(\Delta \chi ^{2} = +0.04\)
 relative to flat \(\Lambda \mathrm{CDM}\) \emph{at equal parameter
 count} \((\Omega _{\mathrm{m}} = 0.325\), \(H_{0} = 67.9\) vs 0.320,
 68.1 km \(s^{-1}\) \(Mpc^{-1}\); \(\gamma\) fixed at its halo-statistics
-value throughout; script \texttt{run\_deficit\_data.py}). The background
+value throughout; script \texttt{run\_\allowbreak deficit\_\allowbreak data.\allowbreak py}). The background
 is indistinguishable from \(\Lambda \mathrm{CDM}\) on H(z) alone: the
 gate's imprint on the \(z \geq  0\) expansion shape is absorbed by an
 \((\Omega _{\mathrm{m}}\), \(H_{0}\)) shift to the \textasciitilde0.2\%
@@ -2856,7 +2877,7 @@ model's discriminating power resides in the growth and tensor sectors
 
 \textbf{The deep-future second law selects a saturation endpoint.}
 Extending the background beyond the fitted range exposes a structural
-constraint invisible to data (script \texttt{run\_gate\_selection.py}).
+constraint invisible to data (script \texttt{run\_\allowbreak gate\_\allowbreak selection.\allowbreak py}).
 On the accelerating attractor the gate's remaining fill decays at the
 linear-growth rate \(\propto  e^{-2N}\) (N = ln a), slower than matter's
 \(e^{-3N}\), so any gate still strictly filling at the attractor forces
@@ -3016,7 +3037,7 @@ recent results that could damage SEDE, with our assessment of each.
   multifrequency likelihood remains not run (ACT \emph{lensing}, the
   DE-sensitive channel, is; §above) --- formally deferred under the
   pre-registered trigger (pre-registration §\ref{sec-E};
-  \texttt{act\_dr6\_mflike} + multi-GB products not installed), with the
+  \texttt{act\_\allowbreak dr6\_\allowbreak mflike} + multi-GB products not installed), with the
   falsifiable committed expectation
   \textbar{}\(\Delta \chi ^{2}\)\textbar{} \textless{} 1 given three
   concordant CMB datasets already at that level; a full MCMC for
@@ -3182,10 +3203,10 @@ likelihood, the marginalised MCMC \((\Delta \mathrm{DIC}\),
 \(p_{\mathrm{D}}\)), the per-probe decomposition, the false-preference
 mock calibration (Fig. 6), the out-of-sample split, the
 \(tracer/\gamma\) robustness scans, and the sha256-locked prediction set
-(\texttt{predictions.json}, verified byte-for-byte by
-\texttt{gen\_predictions.py}). A single entry point
-(\texttt{reproduce\_figures.py}) regenerates the figures, and the
-inference drivers under \texttt{src/experiments/} regenerate the
+(\texttt{predictions.\allowbreak json}, verified byte-for-byte by
+\texttt{gen\_\allowbreak predictions.\allowbreak py}). A single entry point
+(\texttt{reproduce\_\allowbreak figures.\allowbreak py}) regenerates the figures, and the
+inference drivers under \texttt{src/\allowbreak experiments/\allowbreak } regenerate the
 headline model-comparison numbers; an automated verification suite
 checks the background layer numerically. Two components are \emph{not}
 regenerated locally and are reported from the companion
@@ -3573,7 +3594,7 @@ scrambling V60; causal-set dof counting in Minkowski + de Sitter V61;
 the entropy-bound audit V62; the tensor-network realisability test V63),
 and the cross-horizon and quantum-sector consistency checks. The
 verification suite and the figures regenerate from the repository, and
-the CAMB-in-the-loop inference drivers under \texttt{src/experiments/}
+the CAMB-in-the-loop inference drivers under \texttt{src/\allowbreak experiments/\allowbreak }
 regenerate the headline model-comparison numbers
 \((\Delta \mathrm{DIC}\), the per-probe decomposition, the
 false-preference calibration, the out-of-sample split, and the
@@ -3729,6 +3750,7 @@ closure. Binding energy enters SEDE entropically, fixing the
 horizon's own thermal scale, not energy borrowed from structure. The
 single irreducible foundational input is the microscopic volume-law
 postulate.
-\bibliographystyle{JHEP}
+
+\bibliographystyle{elsarticle-num}
 \bibliography{refs}
 \end{document}
