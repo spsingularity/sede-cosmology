@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-OUT-OF-SAMPLE PREDICTION cross-validation (borrowed from the SEDE_V2 team's CV1/CV2 — the
+OUT-OF-SAMPLE PREDICTION cross-validation (from the parallel SEDE_V2 track's CV1/CV2 — the
 strongest NON-FLEXIBILITY test).  Pure flexibility helps the in-sample fit but HURTS
 held-out prediction; if SEDE predicts data it never saw better than ΛCDM, the preference is
 signal, not over-fitting.  Canonical SEDE-H (Barrow λ=0.5, γ=theory) vs ΛCDM; geometry only
