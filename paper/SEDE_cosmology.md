@@ -1726,7 +1726,7 @@ model-selection test. SEDE is a moderate preference, not established — and, cr
 
 The code, data vectors, and analysis pipelines that support the findings of this study are openly
 available at <https://github.com/spsingularity/sede-cosmology>, with a tagged release archived at Zenodo, DOI
-[10.5281/zenodo.21525525](https://doi.org/10.5281/zenodo.21525525). The repository ships the model package (the background
+[10.5281/zenodo.21525524](https://doi.org/10.5281/zenodo.21525524). The repository ships the model package (the background
 E(z), w(z), the structure gate f_sat, and the halo-binding γ derivation), the public data vectors, the
 figure generators, and the **CAMB-in-the-loop inferential pipeline** — the canonical (λ = 1/2)
 background → r_drag/r_star → BAO + compressed-CMB joint likelihood, the marginalised MCMC (ΔDIC, p_D),
