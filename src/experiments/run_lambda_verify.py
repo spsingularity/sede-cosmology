@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Independently verify SEDE_V2's claim: parameter-free lambda=0.5 + gamma=theory
+"""Independently verify the V2 claim: parameter-free lambda=0.5 + gamma=theory
 SEDE-H beats LCDM under the gold-standard CAMB CMB. Uses MY E_SEDE_lambda (same
 H^{2 lambda}-coupling fixed-point form as their cosmology.py) in MY CAMB joint."""
 import numpy as np, camb
