@@ -835,6 +835,7 @@ forbid post-hoc tuning:
 | w = −1 crossing redshift (consistency check, *not* a discriminator) | z ≈ 0.19 (GH-convention volume-law value, convention-conditional; ∼2.2σ mild tension) | GP reconstructions z_wt ≈ 0.46 (+0.24/−0.12) [@Zhang:2025bmk] |
 | structure amplitude σ8 | ≈ 0.811 (FPAB-SEDE; *raises* growth vs ΛCDM 0.800) | a smooth-fluid c_s²=1 σ8 ≈ 0.76 (retracted) |
 | gravitational slip / force | $\gamma_{\rm slip}$ = 1; $\mu_\infty(0)$ = 1.05, turn-on $k_{50}$–$k_{90}$ = (0.70–2.1) aH | ΛCDM (μ = 1, no scale-dependent force) |
+| $E_G$ (lensing-to-velocity ratio) | **+3.4% at z = 0**, +2.1% at z = 0.3, +0.5% at z = 1 (Σ = μ = 1.05 against growth +1.6%); *enhanced*, never suppressed | ΛCDM ($E_G$ = Ω$_{m,0}$/f); a suppressed $E_G$ falsifies |
 | growth index γ_growth | ≈ 0.55 | modified gravity (γ_growth ≠ 0.55) |
 
 ```{=latex}
@@ -992,12 +993,23 @@ RSD/weak lensing. It is parameter-free and uses nothing beyond §3; no criticali
 The observable form of the lock (P2), and a GR consistency null. The lock derived above — the
 phantom part of w(z) equals (1/3)(χ_x/φ)·2x·g reconstructed from growth data, obeyed by *no* kinematic
 dark energy — is the model's one parameter-free, degeneracy-breaking prediction. Its established
-observational realisation is the E_G estimator (the lensing-to-velocity amplitude ratio): SEDE is GR
-with smooth dark energy, so it predicts no gravitational slip, E_G(z) = Ω_m,0/f(z), within <1% of ΛCDM
-and consistent with the DESI-DR1 + weak-lensing measurement to z ≈ 1 [@Rauhut:2025eaz]
-. E_G is a *shared* GR null (with the GW-speed c_T = c and the
-zero-slip nulls SEDE passes), not a SEDE-vs-ΛCDM discriminator — at 0.3% it sits far below the ∼5–20%
-E_G errors; the model's only discriminator remains the deformation amplitude Δ (§5.6, §6). Failure of
+observational realisation is the E_G estimator (the lensing-to-velocity amplitude ratio). SEDE is GR
+with smooth dark energy *at the background level*; its perturbation sector is the cubic-KGB completion,
+which has zero gravitational slip but μ_∞ = 1.05. Zero slip fixes Φ = Ψ and therefore **Σ = μ** — it does
+*not* set Σ = 1, and E_G = Ω_m,0 Σ/f moves whenever μ and the growth rate fail to cancel. Running the
+FPAB-SEDE completion through Mochi-CLASS (`src/experiments/run_eg_consistency.py`) settles both halves:
+the slip Φ/Ψ = 1.00000 at every redshift, and Σ/μ = 1.00000 with Σ = μ = 1.051 at z = 0 — reproducing the
+independently computed μ_∞ of the observational-tests companion through a different observable channel.
+The growth rate is enhanced by only 1.6%, so the cancellation is partial:
+
+E_G(SEDE)/E_G(ΛCDM) = μ · f_GR/f_SEDE = **1.034 at z = 0**, falling to 1.021 at z = 0.3 and 1.005 at z = 1.
+
+E_G is therefore **not** a shared GR null, as an earlier version of this section claimed. It is a second
+parameter-free consequence of μ_∞ > 1, in the same enhancing direction as the fσ8 prediction. At ≤3.4% it
+still sits below the ∼5–20% current E_G errors, so it remains consistent with the DESI-DR1 + weak-lensing
+measurement to z ≈ 1 [@Rauhut:2025eaz] — a target for future surveys rather than a present discriminator,
+and a *signed* one: SEDE forbids a suppressed E_G. The sharpest discriminator remains the deformation
+amplitude Δ (§5.6, §6). Failure of
 the lock (P2) would falsify the structure-sourcing mechanism itself — SEDE would then be an ordinary
 kinematic w(z) — so P2 is the test that separates the mechanism from a curve fit.
 
